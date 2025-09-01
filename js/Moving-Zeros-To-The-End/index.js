@@ -1,10 +1,16 @@
 function moveZeros(arr) {
-  const arr = [];
-  const nonNol = arr.map((item) => {
-    if (item === 0) {
+  const arrNuls = [];
+  const arrNotNuls = [];
+
+  for (let num of arr) {
+    if (num === 0) {
+      arrNuls.push(num);
+    } else {
+      arrNotNuls.push(num);
     }
-  });
-  return;
+  }
+
+  return [...arrNotNuls, ...arrNuls];
 }
 
 console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
